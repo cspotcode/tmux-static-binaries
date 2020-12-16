@@ -28,6 +28,8 @@ shopt -s inherit_errexit
 # rm -rf tmux || true
 # git submodule update --init --recursive
 
+sudo apt install libevent-dev
+
 cd tmux
 git fetch
 git checkout origin/master -- .github/travis
