@@ -24,8 +24,14 @@ shopt -s inherit_errexit
 
 # sudo apt install build-essential automake libevent-dev ncurses-dev bison flex
 
+# git clean -xdf
+# rm -rf tmux || true
+# git submodule update --init --recursive
+
 cd tmux
 git fetch
 git checkout origin/master -- .github/travis
 
-BUILD=musl-static sh .github/travis/build.sh
+# BUILD=musl-static sh .github/travis/build.sh
+BUILD=static sh .github/travis/build.sh
+cp ./tmux ../dist/tmux
